@@ -1,0 +1,17 @@
+field,description,origin_or_note
+product,Crop name,Original source field
+admin_1,First-level administrative region; 37 observed values,Original source field
+admin_2,Second-level administrative field; all Nigeria rows are 'none',Original source field
+planting_year,Planting year,Original source field
+planting_month,Planting month; all Nigeria rows are 3,Original source field
+harvest_year,Harvest year,Original source field
+harvest_month,Harvest month; all Nigeria rows are 10,Original source field
+season_name,Season label: Wet or Annual,Original source field
+yield,Yield in metric tonnes per hectare (mt/ha),Original source field; official HarvestStat documentation
+production,Production in metric tonnes (mt),Original source field; official HarvestStat documentation
+area,Cropped area in hectares (ha),Original source field; official HarvestStat documentation
+qc_flag,"Quality-control code: 0=no flag, 1=outlier, 2=low variance",Original source field; official HarvestStat documentation
+planting_period,Derived YYYY-MM period; no day inferred,"Derived, for monthly climate joins"
+harvest_period,Derived YYYY-MM period; no day inferred,"Derived, for monthly climate joins"
+*_iqr_outlier_review,Crop-specific 1.5*IQR statistical review flag; not an error verdict,"Derived, review only"
+yield_calculated_production_over_area,Arithmetic ratio when area is present and nonzero,"Derived, not unit confirmation"
