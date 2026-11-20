@@ -18,7 +18,7 @@
 ## Source documentation follow-up
 Official HarvestStat documentation confirms `area` is in hectares (ha), `production` in metric tonnes (mt), and `yield` in metric tonnes per hectare (mt/ha). It defines `qc_flag` as 0 = no flag, 1 = outlier, and 2 = low variance. See `OUTSTANDING_WORK_UPDATE.md` for the source links and GROW-Africa assessment.
 
-The GROW-Africa v2.0 documentation describes an Africa-wide source containing regional statistics, household surveys, and point observations. Its regional data partly incorporate HarvestStat, so do not append regional GROW-Africa rows to this file without source-level deduplication. Exact Nigerian incremental coverage and overlap have not yet been counted.
+The GROW-Africa v2.0 documentation describes an Africa-wide source containing regional statistics, household surveys, and point observations; its paper identifies Nigeria in the LSMS-ISA survey component. This suggests useful plot/household and potentially finer spatial coverage, while the documented Nigerian survey waves fall inside HarvestStat's 1999–2023 years. Its regional data partly incorporate HarvestStat, so do not append regional GROW-Africa rows to this file without source-level deduplication. Exact Nigerian crop/record counts and overlap have not yet been counted; see `OUTSTANDING_WORK_UPDATE.md` for the assessment and sources.
 
 ## QA decisions
 - Exact duplicate rows: none.

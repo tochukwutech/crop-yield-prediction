@@ -21,11 +21,11 @@ The official project documentation also clarifies that planting and harvest year
 
 ## GROW-Africa comparison
 
-The official GROW-Africa v2.0 record describes 535,844 georeferenced crop-yield observations covering 25 crops and 1960–2023. Its database includes LSMS crop-cut records, LSMS farmer surveys, other point observations, and regional statistics. The regional series are compiled in part from HarvestStat, as well as FAO/Agro-MAPS and ReSAKSS Country eAtlases.
+The official GROW-Africa v2.0 record describes 535,844 georeferenced crop-yield observations covering 25 crops and 1960–2023. Its database includes LSMS crop-cut records, LSMS farmer surveys, other point observations, and regional statistics. The paper identifies Nigeria among the countries represented in the LSMS-ISA survey component. The World Bank lists Nigerian General Household Survey Panel waves in 2010–11, 2012–13, 2015–16, and 2018–19. GROW-Africa's regional series are compiled in part from HarvestStat, as well as FAO/Agro-MAPS and ReSAKSS Country eAtlases.
 
-Compared with this Nigeria HarvestStat extract (20 crops, 1999–2023, 37 first-level regions, and no usable `admin_2` values), GROW-Africa is a promising complement for point- or plot-level observations and potentially finer geographic detail. Its Africa-wide crop list also includes crops beyond the 20 observed here. However, the catalog-level metadata does not establish that those extra crops, earlier years, or finer spatial units are actually present in its Nigerian records. The regional GROW-Africa file also partly reuses HarvestStat, so combining its regional records with this extract without source-level deduplication could double-count observations.
+Compared with this Nigeria HarvestStat extract (20 crops, 1999–2023, 37 first-level regions, and no usable `admin_2` values), the clearest expected benefit is **different observation types and finer potential geography**: GROW-Africa includes survey/plot and point observations linked to coordinates and nested administrative IDs, while the HarvestStat Nigeria extract is aggregated to first-level regions. The cited Nigerian survey waves fall within HarvestStat's 1999–2023 time span, so the evidence reviewed does not establish a longer Nigerian time series. GROW-Africa's Africa-wide crop list is broader, but its documentation alone does not prove which of those additional crops occur in Nigeria. The regional GROW-Africa file partly reuses HarvestStat, so combining regional rows without source-level deduplication could double-count observations.
 
-**Assessment:** GROW-Africa may add useful Nigerian survey/point evidence and possibly finer geography, but additional Nigerian coverage has not been demonstrated at the record level yet. Treat the two datasets as separate sources for now. Before merging, filter GROW-Africa to Nigeria, summarize valid records by crop/year/geographic level/source, identify HarvestStat-derived regional rows, harmonize units and crop labels, and quantify overlap. The published dataset README identifies the required source tables and geographic lookup tables.
+**Assessment:** GROW-Africa is a useful candidate complement for Nigerian plot/household observations and potentially finer spatial coverage, especially if the project benefits from those data types. It is not established as a source of additional Nigerian years or crop types from the documentation alone. Before merging, filter GROW-Africa to Nigeria, summarize valid records by crop/year/geographic level/source, identify HarvestStat-derived regional rows, harmonize units and crop labels, and quantify overlap. The published dataset README identifies the required source tables and geographic lookup tables.
 
 ## Evidence and sources
 
@@ -34,6 +34,8 @@ Compared with this Nigeria HarvestStat extract (20 crops, 1999–2023, 37 first-
 - GROW-Africa v2.0 record and files: <https://zenodo.org/records/16544448>
 - GROW-Africa README: <https://zenodo.org/records/16544448/files/readme.txt?download=1>
 - GROW-Africa data paper: <https://www.nature.com/articles/s41597-025-05257-5>
+- GROW-Africa data paper (PMC full text): <https://pmc.ncbi.nlm.nih.gov/articles/PMC12215972/>
+- World Bank Nigeria LSMS-ISA survey waves: <https://www.worldbank.org/en/programs/lsms/initiatives/lsms-ISA>
 
 ## Remaining publication and integration items
 
