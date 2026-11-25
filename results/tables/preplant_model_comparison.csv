@@ -1,0 +1,73 @@
+evaluation_period,group,model,records,MAE,RMSE,R2
+validation 2019-2020,Overall,Crop median baseline,483,1.1636369280815526,2.2778298742594987,0.51285425459843
+validation 2019-2020,Overall,"Crop, state, and prior-three-year climate",483,1.205166887940252,2.7256769629586777,0.30246643255374805
+validation 2019-2020,Cassava,Crop median baseline,68,4.0141189425641,4.759608372929212,-1.1430713649445083
+validation 2019-2020,Cassava,"Crop, state, and prior-three-year climate",68,4.170998256710675,5.7757430309750655,-2.1558032511633756
+validation 2019-2020,Cowpea,Crop median baseline,74,0.2623171643365548,0.3710292212220115,-0.29427741691016207
+validation 2019-2020,Cowpea,"Crop, state, and prior-three-year climate",74,0.24711788245883642,0.36923122352799115,-0.28176374344671196
+validation 2019-2020,Groundnuts (In Shell),Crop median baseline,57,0.29968129128908655,0.4292120519790402,-0.1301927355446839
+validation 2019-2020,Groundnuts (In Shell),"Crop, state, and prior-three-year climate",57,0.2879742762958162,0.37475012113626055,0.13842664604973642
+validation 2019-2020,Maize,Crop median baseline,74,0.44137348058414333,0.5462320728992008,-0.9023347590428406
+validation 2019-2020,Maize,"Crop, state, and prior-three-year climate",74,0.38315600141361766,0.502330332041718,-0.6088344424941461
+validation 2019-2020,Millet,Crop median baseline,40,0.2796461817077005,0.4717848393649508,-0.19336502758036245
+validation 2019-2020,Millet,"Crop, state, and prior-three-year climate",40,0.28420602373075143,0.4440192209799257,-0.05703382687302039
+validation 2019-2020,Rice,Crop median baseline,74,0.27099875507217447,0.36906197212605596,-0.004583844696624206
+validation 2019-2020,Rice,"Crop, state, and prior-three-year climate",74,0.38444354525580837,0.5251655561528867,-1.0341363577395692
+validation 2019-2020,Sorghum,Crop median baseline,44,0.16152826447660085,0.20336750778070758,-0.002215800412330271
+validation 2019-2020,Sorghum,"Crop, state, and prior-three-year climate",44,0.1955634079447914,0.26742825131783454,-0.7330563399257843
+validation 2019-2020,Yams,Crop median baseline,52,3.4918193857846567,4.16491096993045,-0.13644545716175194
+validation 2019-2020,Yams,"Crop, state, and prior-three-year climate",52,3.595982134916576,4.906284476169594,-0.5770396195007639
+"validation 2019-2020, QC-0 only",Overall,Crop median baseline,381,0.8917008367869591,1.876789283408393,0.6774546494082232
+"validation 2019-2020, QC-0 only",Overall,"Crop, state, and prior-three-year climate",381,0.8732966352583925,1.9743295590315852,0.6430568503263658
+"validation 2019-2020, QC-0 only",Cassava,Crop median baseline,38,3.256898224770335,4.230263278723366,-0.8898916560929246
+"validation 2019-2020, QC-0 only",Cassava,"Crop, state, and prior-three-year climate",38,3.402703944786516,4.3036300782969885,-0.9560141003032523
+"validation 2019-2020, QC-0 only",Cowpea,Crop median baseline,64,0.2825226465831127,0.3978356873856695,-0.3933440419897374
+"validation 2019-2020, QC-0 only",Cowpea,"Crop, state, and prior-three-year climate",64,0.2436648124689473,0.37864031998594355,-0.26213149739219577
+"validation 2019-2020, QC-0 only",Groundnuts (In Shell),Crop median baseline,45,0.3082296399773909,0.4477570396147139,-0.29130811639579557
+"validation 2019-2020, QC-0 only",Groundnuts (In Shell),"Crop, state, and prior-three-year climate",45,0.31314958841900975,0.40172246885774554,-0.03943486946050889
+"validation 2019-2020, QC-0 only",Maize,Crop median baseline,54,0.42258699301067437,0.5308107870841191,-1.0344959182171123
+"validation 2019-2020, QC-0 only",Maize,"Crop, state, and prior-three-year climate",54,0.36170012144010183,0.47826026222137935,-0.6516040462825774
+"validation 2019-2020, QC-0 only",Millet,Crop median baseline,36,0.29491163887715105,0.4966983992377256,-0.2805805103145742
+"validation 2019-2020, QC-0 only",Millet,"Crop, state, and prior-three-year climate",36,0.30812667888404416,0.47843743759847696,-0.18815111143169294
+"validation 2019-2020, QC-0 only",Rice,Crop median baseline,74,0.27047366213754775,0.3688324193536509,-0.003334551585456369
+"validation 2019-2020, QC-0 only",Rice,"Crop, state, and prior-three-year climate",74,0.3596359583597143,0.5094381778463698,-0.9141262105414447
+"validation 2019-2020, QC-0 only",Sorghum,Crop median baseline,32,0.1430157510036141,0.17253119316461013,-0.0030261196615521957
+"validation 2019-2020, QC-0 only",Sorghum,"Crop, state, and prior-three-year climate",32,0.2217115978568767,0.3183038924705649,-2.413979352117404
+"validation 2019-2020, QC-0 only",Yams,Crop median baseline,38,3.315685037942339,3.9991074010182275,-0.014931546782001703
+"validation 2019-2020, QC-0 only",Yams,"Crop, state, and prior-three-year climate",38,2.8790734107121545,4.358432679256624,-0.20551134144339978
+previously examined period 2021-2023,Overall,Crop median baseline,726,1.106287356090878,2.1751022797911572,0.6089356956830827
+previously examined period 2021-2023,Overall,"Crop, state, and prior-three-year climate",726,1.1455373572089018,2.62308690607859,0.43125948358371347
+previously examined period 2021-2023,Cassava,Crop median baseline,102,3.546382172303429,4.306843591966815,-0.5665792982105518
+previously examined period 2021-2023,Cassava,"Crop, state, and prior-three-year climate",102,3.892610892918255,5.535558950392734,-1.5879575187678214
+previously examined period 2021-2023,Cowpea,Crop median baseline,111,0.25243202723588826,0.3582449827938562,-0.15125237292472837
+previously examined period 2021-2023,Cowpea,"Crop, state, and prior-three-year climate",111,0.2540547533419052,0.3471309344881276,-0.08092842999942151
+previously examined period 2021-2023,Groundnuts (In Shell),Crop median baseline,87,0.27656669315800214,0.39015905793155814,-0.006794074386892168
+previously examined period 2021-2023,Groundnuts (In Shell),"Crop, state, and prior-three-year climate",87,0.27326364311899687,0.3516946819733234,0.18193301591035294
+previously examined period 2021-2023,Maize,Crop median baseline,111,0.4764928599413803,0.5901919585881247,-0.7305063882027174
+previously examined period 2021-2023,Maize,"Crop, state, and prior-three-year climate",111,0.4381488873232222,0.5657043135604778,-0.589884632721333
+previously examined period 2021-2023,Millet,Crop median baseline,60,0.2892872069299307,0.4303550860748137,-0.06709721033267768
+previously examined period 2021-2023,Millet,"Crop, state, and prior-three-year climate",60,0.3431123411591354,0.4821110678749469,-0.33919650766743303
+previously examined period 2021-2023,Rice,Crop median baseline,111,0.2989815237617529,0.40025800883554624,-0.046040710829653886
+previously examined period 2021-2023,Rice,"Crop, state, and prior-three-year climate",111,0.3992543153805311,0.5601949565973445,-1.0490233862843992
+previously examined period 2021-2023,Sorghum,Crop median baseline,66,0.15958182499169005,0.22396697018223397,-0.028873285060947218
+previously examined period 2021-2023,Sorghum,"Crop, state, and prior-three-year climate",66,0.18964839301025063,0.2635791415054878,-0.4250037893822318
+previously examined period 2021-2023,Yams,Crop median baseline,78,3.530578104651319,4.303262745075417,-0.04700140952424525
+previously examined period 2021-2023,Yams,"Crop, state, and prior-three-year climate",78,3.2895449458378883,4.7457872430027885,-0.2734094491277501
+"previously examined period 2021-2023, QC-0 only",Overall,Crop median baseline,679,1.0227692040592475,2.060179682841128,0.650813842941253
+"previously examined period 2021-2023, QC-0 only",Overall,"Crop, state, and prior-three-year climate",679,1.040011084371957,2.361197453989098,0.5413182813177309
+"previously examined period 2021-2023, QC-0 only",Cassava,Crop median baseline,90,3.484909458556287,4.303830856779901,-0.627245275621165
+"previously examined period 2021-2023, QC-0 only",Cassava,"Crop, state, and prior-three-year climate",90,3.7346323392443095,4.911177272330928,-1.1189165377566304
+"previously examined period 2021-2023, QC-0 only",Cowpea,Crop median baseline,106,0.2574657561786463,0.3652049007364172,-0.16647809045053874
+"previously examined period 2021-2023, QC-0 only",Cowpea,"Crop, state, and prior-three-year climate",106,0.23907605853440894,0.3280177709413067,0.0589815498878945
+"previously examined period 2021-2023, QC-0 only",Groundnuts (In Shell),Crop median baseline,82,0.2737179839693031,0.3898823196849352,-0.005966188022678676
+"previously examined period 2021-2023, QC-0 only",Groundnuts (In Shell),"Crop, state, and prior-three-year climate",82,0.2902521941722293,0.367051243548199,0.10840073744927636
+"previously examined period 2021-2023, QC-0 only",Maize,Crop median baseline,104,0.4762447082288856,0.5929457428899834,-0.7694407907515335
+"previously examined period 2021-2023, QC-0 only",Maize,"Crop, state, and prior-three-year climate",104,0.45473240765420503,0.582229095922253,-0.7060585581753784
+"previously examined period 2021-2023, QC-0 only",Millet,Crop median baseline,59,0.29186070254117763,0.4336048682161465,-0.07152190467406516
+"previously examined period 2021-2023, QC-0 only",Millet,"Crop, state, and prior-three-year climate",59,0.3125740479431589,0.4408668895687234,-0.10771419474483346
+"previously examined period 2021-2023, QC-0 only",Rice,Crop median baseline,111,0.29788005246554794,0.3994964577106826,-0.04206399769025304
+"previously examined period 2021-2023, QC-0 only",Rice,"Crop, state, and prior-three-year climate",111,0.38064406008747736,0.5403218204537734,-0.9062222703096448
+"previously examined period 2021-2023, QC-0 only",Sorghum,Crop median baseline,62,0.15344438902778737,0.2184108625376653,-0.04984087151196359
+"previously examined period 2021-2023, QC-0 only",Sorghum,"Crop, state, and prior-three-year climate",62,0.18265996868719175,0.25861274327469386,-0.4718882919560563
+"previously examined period 2021-2023, QC-0 only",Yams,Crop median baseline,65,3.411611144563256,4.150825298723158,-0.005213081371219008
+"previously examined period 2021-2023, QC-0 only",Yams,"Crop, state, and prior-three-year climate",65,3.1014988565661743,4.818393406176758,-0.3545459224609979

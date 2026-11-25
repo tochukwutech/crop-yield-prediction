@@ -223,3 +223,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local macOS metadata
+.DS_Store
+
+# Large CHIRPS source rasters are kept outside Git; share them through data storage.
+data/raw/chirps/

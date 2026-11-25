@@ -1,106 +1,80 @@
-# Climate-Based Multi-Crop Yield Prediction in Nigeria
+# Climate-Based Crop Yield Analysis in Nigeria
 
-## Project Overview
-This project focuses on developing a machine learning approach for estimating the yields of selected crops in Nigeria using historical agricultural and climate data.
+## Project status
 
-It aims to investigate the relationship between climatic conditions, particularly rainfall and temperature, and crop yields. By combining historical agricultural records with relevant climate data, the project will explore regression-based machine learning models to estimate crop yields and evaluate their performance.
+This project has assembled and explored Nigeria crop-yield data, joined state-level rainfall and temperature summaries, compared a crop-median reference with a pre-plant climate model, and built a local Streamlit prototype. The current evidence does not show that the tested climate model improves overall predictive accuracy over the crop-median baseline. The prototype is therefore an exploratory planning aid, not a validated farm-level forecasting service.
 
-The project will cover multiple selected crops in Nigeria, with the final crop selection depending on the availability and quality of historical data.
+## Research question
 
-## Problem Statement
-Agricultural production is influenced by several environmental factors, including rainfall and temperature. Variations in these climatic conditions can affect crop growth and ultimately influence agricultural yields.
+Can crop and state identifiers plus climate summaries available before planting improve estimates of recorded crop yield in Nigeria? The current model uses the mean state annual rainfall and mean temperature for the three complete years before planting. Its target is HarvestStat Africa v1.2 yield, in metric tonnes per hectare. The model excludes production, area, QC flags, and target-year climate from its predictors.
 
-In Nigeria, understanding the relationship between climate conditions and crop yields is important for analysing agricultural productivity and supporting informed decision-making. However, estimating crop yields across different crops and locations requires relevant historical agricultural and climate data to be collected, prepared and analysed.
+## Data
 
-This project seeks to address this by integrating historical agricultural and climate datasets and applying machine learning regression techniques to estimate the yields of selected crops in Nigeria based on climatic conditions observed throughout their growing seasons.
+- `data/raw/hvstat_africa_data_v1.2.csv`: source HarvestStat Africa data.
+- `data/processed/harveststat_nigeria.csv`: Nigeria extract, 9,636 records, 20 crops, 37 admin-1 areas, 1999–2023.
+- `data/raw/boundaries/`: HarvestStat Africa v1.2 administrative boundaries used for climate aggregation.
+- `data/raw/chirps/`: monthly CHIRPS raster inputs. `-9999` is treated as missing in the climate exploration workflow.
+- `data/raw/nasa_power/`: state-point monthly NASA POWER source responses.
+- `data/processed/climate/`: state-month and state-year climate tables, exploratory joins, and candidate modeling tables.
 
+The modeling comparison focuses on Cassava, Cowpea, Groundnuts (In Shell), Maize, Millet, Rice, Sorghum, and Yams. The exploration notebooks document missing fields, crop and season coverage, yield distributions, unusual values, and climate coverage. Outlier checks are review prompts; they do not automatically alter source values. HarvestStat v1.2 defines area in hectares, production in metric tonnes, yield in metric tonnes per hectare, and QC flags as 0 (no flag), 1 (outlier), and 2 (low variance). A QC-0 record is not thereby guaranteed error-free.
 
-## Project Aim and Objectives
-The project intends to:
+## Modeling and evaluation
 
-1. Obtain relevant historical agricultural and climate data for selected crops in Nigeria.
-2. Examine how climate factors, such as rainfall and temperature, relate to crop yields.
-3. Prepare and integrate the collected datasets for machine learning.
-4. Explore suitable regression algorithms for estimating crop yields.
-5. Compare the performance of the selected models to determine which provides the most reliable estimates.
+`notebooks/04_preplant_model_pipeline.ipynb` is the clearest current account of the three-year pre-plant experiment. The comparison trains through 2018 and validates on 2019–2020. The 2021–2023 comparison was examined previously and is a reproduction, not an untouched test set. It must not be used to select new features or tune models and then presented as independent final evidence.
 
-## Proposed Methodology
-The project proposes using supervised machine learning to estimate the yields of multiple crops in Nigeria. Historical crop yield records will be combined with climate data to examine how environmental conditions throughout the growing season relate to agricultural productivity. The model will use factors such as crop type, geographical location, rainfall, and temperatures as input variables, while the recorded crop yield will serve as the target variable.
-We intend to explore regression algorithms such as Linear Regression, Random Forest Regression, and Gradient Boosting. Their performance will be compared to determine which approach provides the most reliable crop yield estimates.
+The checked-in results show:
 
+| Period and records | Crop-median baseline MAE / RMSE / R² | Crop-state-climate model MAE / RMSE / R² |
+| --- | ---: | ---: |
+| Validation 2019–2020, all records (483) | 1.164 / 2.278 / 0.513 | 1.205 / 2.726 / 0.302 |
+| Validation 2019–2020, QC-0 (381) | 0.892 / 1.877 / 0.677 | 0.873 / 1.974 / 0.643 |
+| Previously examined 2021–2023, all records (726) | 1.106 / 2.175 / 0.609 | 1.146 / 2.623 / 0.431 |
+| Previously examined 2021–2023, QC-0 (679) | 1.023 / 2.060 / 0.651 | 1.040 / 2.361 / 0.541 |
 
-## Dataset and Data Sources
-The project will use historical agricultural and climate datasets relevant to selected crops and locations in Nigeria.
+MAE and RMSE are in mt/ha. Across the full validation set and previously examined period, the crop-median baseline has lower overall error. Crop-level results vary; no broad climate-model advantage is established. This is evidence about the specific data, features, and model tested, not evidence that climate has no relationship with yield.
 
-The proposed data sources include:
+## Notebooks and outputs
 
-1. **GROW-Africa Database:** A source of historical agricultural data, including crop yield observations across African countries.
-   - https://zenodo.org/records/16544448
+1. `notebooks/01_data_exploration.ipynb`: agricultural data coverage, QC, yield distributions, regional and year patterns.
+2. `notebooks/02_climate_data_exploration.ipynb`: source coverage and preparation of state-level climate summaries.
+3. `notebooks/03_preplant_model_preparation.ipynb`: candidate feature preparation and earlier experiments. Some statements describe 2021–2023 as an untouched final test; those statements are stale because the period has since been examined. Read the later clarification in notebook 04 and do not treat those historical scores as fresh test evidence.
+4. `notebooks/04_preplant_model_pipeline.ipynb`: current three-year feature definition, validation, historical reproduction, results, and limitations.
 
-2. **HarvestStat Africa:** A harmonised agricultural database containing crop production, harvested area and yield statistics across African countries.
-   - https://datadryad.org/dataset/doi:10.5061/dryad.vq83bk42w
+Key tables are in `results/tables/`; model setup and evaluation-period notes are in `models/preplant_pipeline_metadata.json`. The `nigeria_preplant_candidate.csv` and `nigeria_preplant_model_table.csv` files retain earlier one-year climate features and are not interchangeable with notebook 04's three-year features. Check feature definitions before using either file.
 
-3. **CHIRPS:** A climate data source providing historical rainfall estimates.
-   - https://www.chc.ucsb.edu/data/chirps
+## Local prototype
 
-4. **NASA POWER:** A source of meteorological data, including temperature and other climate variables.
-   - https://power.larc.nasa.gov/data-access-viewer/
+The Streamlit app in `app.py` rebuilds the three-year Random Forest from project CSV inputs and presents its estimate alongside a crop-median reference. Inputs are state-level, not farm-level. Its estimate should be interpreted as exploratory context; farm conditions, within-season weather, soils, varieties, inputs, and management are not represented.
 
-The agricultural datasets will provide crop yield information, while the climate datasets will provide relevant environmental variables such as rainfall and temperature.
-
-The collected datasets will be assessed, cleaned and integrated based on crop, geographical location and relevant growing season to prepare them for exploratory data analysis and machine learning.
-
-The final selection of datasets and crops will depend on data availability, coverage, consistency and suitability for the project.
-
-## Technologies and Libraries
-For this machine learning project, we made use of:
-- Python (Technology)
-- Pandas (Library)
-- NumPy (Library)
-- Scikit-Learn (Library)
-- Matplotlib (Library)
-- Seaborn (Library)
-
-## Project Structure
-
-```text
-crop-yield-prediction/
-│
-├── data/
-│   ├── raw/ - Original agricultural and climate datasets
-│   └── processed/ - Cleaned and prepared datasets
-│
-├── notebooks/ - Jupyter notebooks for data exploration and experiments
-│
-├── src/ - Python scripts for data preprocessing and model development
-│
-├── models/ - Saved machine learning models
-│
-├── results/ - Model evaluation results, charts and visualisations
-│
-├── report/ - Project documentation and final report
-│
-├── README.md - Project overview and documentation
-│
-├── requirements.txt - Python project dependencies
-│
-└── .gitignore - Files and directories excluded from Git
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m src.run_pipeline
+streamlit run app.py
 ```
 
-## Team Members
+For the app only, install `requirements-app.txt` instead. To run notebook 04, start Jupyter from the repository root so the local `src` package is importable. Raw climate ingestion and raster preparation remain documented in notebook 02 and require the supplied raw files; the scoring command above rebuilds the modeling table and evaluation tables from the checked-in processed CSV inputs without network access.
+
+The bundled climate data end in 2023. With yields through 2023, the present app can construct the three prior years for planting year 2024 only. Refresh and quality-check climate inputs before supporting a later year.
+
+## Recommended work sequence
+
+1. Reconcile the source documentation, code, metadata, and notebook language; keep unit and QC definitions consistent.
+2. Establish one reproducible data-preparation and training entry point so the notebook, CSV outputs, metadata, and app share the same feature construction.
+3. Review climate coverage and aggregation assumptions; compare predeclared seasonal rainfall and temperature summaries with the annual features, without using already examined years for model selection.
+4. Evaluate candidate changes using rolling-origin validation within the historical training period, then reserve a genuinely later untouched period if new yield observations become available.
+5. Report crop-specific metrics, sample counts, error distributions, and uncertainty alongside pooled scores. Keep the crop-median baseline as the benchmark unless a model demonstrates stable gains.
+6. Refresh the README, results, and app’s supported forecast years whenever inputs or modeling choices change.
+
+See `report/project_assessment.md` for the detailed findings and `report/next_steps.md` for the implementation sequence.
+The formal project report is `report/final_report.md`.
+
+## Team
+
 - David Offor (Project Lead)
 - Fahd Animashaun
 - Faisal Farouk-Muazu
 - Muhammed-Faiz Oyebanji
-
-## Project Status
-**Current Stage:** Initial Setup
-
-The project is currently in its initial setup phase. The team is establishing the development environment, organising the GitHub repository and preparing to collect and explore the required agricultural and climate datasets.
-
-Upcoming activities include:
-- Agricultural and climate data collection.
-- Data cleaning and preprocessing.
-- Exploratory data analysis.
-- Machine learning model development.
-- Model evaluation and comparison.
